@@ -1,6 +1,6 @@
 import { createContext, ReactNode, useState } from 'react';
 
-interface CreateCycleData {
+export interface CreateCycleData {
   task: string;
   minutesAmount: number;
 }
@@ -66,7 +66,6 @@ export function CyclesContextProvider({
     setCycles((state) => [...state, newCycle]);
     setActiveCycleId(newCycle.id);
     setAmountSecondsPassed(0);
-    // reset();
   }
 
   function interruptCurrentCycle() {

@@ -1,7 +1,7 @@
 import { HandPalm, Play } from 'phosphor-react';
 import { useContext } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
-import { CyclesContext } from '../../context/CyclesContext';
+import { CreateCycleData, CyclesContext } from '../../context/CyclesContext';
 import { Countdown } from './components/Countdown';
 import { NewCycleForm } from './components/NewCycleForm';
 
@@ -18,14 +18,19 @@ export function Home() {
     defaultValues: { task: '', minutesAmount: 5 },
   });
 
-  const { handleSubmit, watch /*reset*/ } = newCycleForm;
+  const { handleSubmit, watch, reset } = newCycleForm;
+
+  function handleCreateNewCycle(data: CreateCycleData) {
+    createNewCycle(data);
+    reset();
+  }
 
   const task = watch('task');
   const isSubmitDisabled = !task;
 
   return (
     <HomeContainer>
-      <form action="" onSubmit={handleSubmit(createNewCycle)}>
+      <form action="" onSubmit={handleSubmit(handleCreateNewCycle)}>
         <FormProvider {...newCycleForm}>
           <NewCycleForm />
         </FormProvider>
