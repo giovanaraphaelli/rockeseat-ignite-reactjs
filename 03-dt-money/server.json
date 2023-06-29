@@ -15,6 +15,22 @@
       "category": "Alimentação",
       "price": 35,
       "createdAt": "2023-06-29T17:50:40.682Z"
+    },
+    {
+      "id": 3,
+      "description": "Hot Dog",
+      "type": "outcome",
+      "category": "Alimentação",
+      "price": 20,
+      "createdAt": "2023-06-28T17:50:40.682Z"
+    },
+    {
+      "id": 4,
+      "description": "Desenvolvimento de site",
+      "type": "income",
+      "category": "Venda",
+      "price": 1500,
+      "createdAt": "2023-06-25T17:50:08.738Z"
     }
   ]
 }
